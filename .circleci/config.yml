@@ -13,8 +13,10 @@ commands:
   # Exercise: Reusable Job Code
   print_pipeline_id:
     steps:
-      - run: echo "Hello, World!" 
+      - run: 
           when: on_fail
+          command: |
+            echo "Hello, World!" 
 
             
 #commands:
