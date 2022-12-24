@@ -4,11 +4,7 @@ version: 2.1
 commands:
   destroy_environment:
     steps:
-      -run:
-         name: destroy
-         when: on_fail
-         command: |
-          echo "Hello, World!"
+      - run: echo "Hello, World!"
 
 
 # Define a job to be invoked later in a workflow.
