@@ -4,10 +4,11 @@ version: 2.1
 commands:
   destroy_environment:
     steps:
-      name: destroy
-    when: on_fail
-    command: |
-      echo "Hello, World!"
+      -run:
+         name: destroy
+         when: on_fail
+         command: |
+          echo "Hello, World!"
 
 
 # Define a job to be invoked later in a workflow.
@@ -24,7 +25,11 @@ jobs:
       - checkout
       - run:
           command: return 1
-
+      - destroy_environment
+workflows:
+  myworkflow:
+    jobs:
+      - smoke_test
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
