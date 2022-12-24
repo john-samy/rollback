@@ -12,9 +12,10 @@ orbs:
 commands:
   # Exercise: Reusable Job Code
   print_pipeline_id:
-    when: on_fail
     steps:
-      - run: echo "Hello, World!"
+      - run:
+          when: on_fail
+          echo "Hello, World!"
 #commands:
 #  destroy_environment:
 #    steps:
