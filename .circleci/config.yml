@@ -15,7 +15,8 @@ commands:
     steps:
       - run:
           when: on_fail
-          echo "Hello, World!"
+          command: |
+            echo "Hello, World!"
 #commands:
 #  destroy_environment:
 #    steps:
