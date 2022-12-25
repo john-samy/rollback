@@ -40,7 +40,7 @@ jobs:
       - checkout
       - run:
           command: 
-            return 1
+            return 0
             echo ${CIRCLE_WORKFLOW_ID}
       - print_pipeline_id
 # Invoke jobs via workflows
